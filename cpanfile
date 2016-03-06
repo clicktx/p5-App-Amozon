@@ -24,6 +24,10 @@ requires 'Text::Xslate', '2.0009';
 requires 'parent';
 requires 'perl', '5.010_001';
 
+# dependencies module
+requires 'Plack::Middleware::ReverseProxy', '0.15';
+requires 'DBD::SQLite', '1.50';
+
 on configure => sub {
     requires 'Module::Build', '0.38';
     requires 'Module::CPANfile', '0.9010';
