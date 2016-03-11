@@ -24,6 +24,7 @@ use Markets::Web::View;
 
 # load plugins
 __PACKAGE__->load_plugins(
+    '+Markets::Model',
     'Web::FillInFormLite',
 );
 

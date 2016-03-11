@@ -91,5 +91,8 @@
     <input type="submit" name="Reset counter." class="btn btn-default">
 </form>
      
-
+: $model
+: $logic
+: $keys.model
+: $keys.logic
 : }
