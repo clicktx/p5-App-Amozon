@@ -23,6 +23,7 @@ requires 'Teng::Schema::Declare';
 requires 'Text::Xslate', '2.0009';
 requires 'parent';
 requires 'perl', '5.010_001';
+requires 'Log::Handler', '0.75';
 
 # dependencies module
 requires 'Plack::Middleware::ReverseProxy', '0.15';
