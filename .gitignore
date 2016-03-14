@@ -18,3 +18,5 @@ MYMETA.yml
 /.carton/
 run_script/
 TODO
+log/*
+!.gitkeep
