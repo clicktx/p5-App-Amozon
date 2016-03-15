@@ -1239,35 +1239,6 @@ DISTRIBUTIONS
       IPC::Cmd 0
       XSLoader 0
       base 0
-  Log-Handler-0.87
-    pathname: B/BL/BLOONIX/Log-Handler-0.87.tar.gz
-    provides:
-      Log::Handler 0.84
-      Log::Handler::Config 0.09
-      Log::Handler::Levels 0.07
-      Log::Handler::Output 0.09
-      Log::Handler::Output::DBI 0.12
-      Log::Handler::Output::Email 0.08
-      Log::Handler::Output::File 0.07
-      Log::Handler::Output::Forward 0.03
-      Log::Handler::Output::Screen 0.07
-      Log::Handler::Output::Sendmail 0.07
-      Log::Handler::Output::Socket 0.08
-      Log::Handler::Pattern 0.07
-      Log::Handler::Plugin::Config::General 0.02
-      Log::Handler::Plugin::Config::Properties 0.03
-      Log::Handler::Plugin::YAML 0.03
-    requirements:
-      Carp 0
-      Data::Dumper 0
-      Fcntl 0
-      File::Spec 0
-      POSIX 0
-      Params::Validate 0
-      Sys::Hostname 0
-      Test::More 0
-      Time::HiRes 0
-      UNIVERSAL 0
   MRO-Compat-0.12
     pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
     provides:
