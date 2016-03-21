@@ -17,3 +17,6 @@ MYMETA.yml
 /local/
 /.carton/
 run_script/
+TODO
+/var/log/*
+!.gitkeep
