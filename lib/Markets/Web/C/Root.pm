@@ -14,7 +14,8 @@ sub index {
     $c->session->set( 'counter' => $counter );
     return $c->render(
         'index.tx',
-        {   counter => $counter,
+        {
+            counter => $counter,
             keys    => {
                 model => $model->hello,
                 logic => $logic->hoge,

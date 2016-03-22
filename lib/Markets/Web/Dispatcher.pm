@@ -10,8 +10,7 @@ useall('Markets::Web::C');
 
 base 'Markets::Web::C';
 
-get '/' => 'Root#index';
+get '/'               => 'Root#index';
 post '/reset_counter' => 'Root#reset_counter';
-
 
 1;

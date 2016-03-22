@@ -21,7 +21,7 @@ sub _generate_func {
     return sub {
         my ( $self, @args ) = @_;
         die 'Model name is not specified.'
-            unless ( grep ref($_) eq '', @args );
+          unless ( grep ref($_) eq '', @args );
 
         my ($class_prefix) = split /::/, ref($self);
         $class_prefix .= '::Model';

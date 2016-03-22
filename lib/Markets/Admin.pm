@@ -7,25 +7,28 @@ use File::Spec;
 
 # dispatcher
 use Markets::Admin::Dispatcher;
+
 sub dispatch {
-    return (Markets::Admin::Dispatcher->dispatch($_[0]) or die "response is not generated");
+    return (
+        Markets::Admin::Dispatcher->dispatch( $_[0] )
+          or die "response is not generated"
+    );
 }
 
 # setup view
 use Markets::Admin::View;
 {
+
     sub create_view {
         my $view = Markets::Admin::View->make_instance(__PACKAGE__);
         no warnings 'redefine';
-        *Markets::Admin::create_view = sub { $view }; # Class cache.
-        $view
+        *Markets::Admin::create_view = sub { $view };    # Class cache.
+        $view;
     }
 }
 
 # load plugins
-__PACKAGE__->load_plugins(
-    'Web::FillInFormLite',
-);
+__PACKAGE__->load_plugins( 'Web::FillInFormLite', );
 
 sub show_error {
     my ( $c, $msg, $code ) = @_;
@@ -39,7 +42,7 @@ __PACKAGE__->add_trigger(
     AFTER_DISPATCH => sub {
         my ( $c, $res ) = @_;
 
-        # http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
+# http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
         $res->header( 'X-Content-Type-Options' => 'nosniff' );
 
         # http://blog.mozilla.com/security/2010/09/08/x-frame-options/
@@ -56,29 +59,31 @@ use Crypt::Rijndael;
 
 __PACKAGE__->add_trigger(
     BEFORE_DISPATCH => sub {
-        my ( $c ) = @_;
-        if ($c->req->method ne 'GET' && $c->req->method ne 'HEAD') {
-            my $token = $c->req->header('X-XSRF-TOKEN') || $c->req->param('XSRF-TOKEN');
-            unless ($c->session->validate_xsrf_token($token)) {
-                return $c->create_simple_status_page(
-                    403, 'XSRF detected.'
-                );
+        my ($c) = @_;
+        if ( $c->req->method ne 'GET' && $c->req->method ne 'HEAD' ) {
+            my $token =
+              $c->req->header('X-XSRF-TOKEN') || $c->req->param('XSRF-TOKEN');
+            unless ( $c->session->validate_xsrf_token($token) ) {
+                return $c->create_simple_status_page( 403, 'XSRF detected.' );
             }
         }
         return;
     },
 );
 
-my $cipher = Crypt::CBC->new({
-    key => '4UmqoEoVC6xtAvTxiR_NeTwbIdPPCWic',
-    cipher => 'Rijndael',
-});
+my $cipher = Crypt::CBC->new(
+    {
+        key    => '4UmqoEoVC6xtAvTxiR_NeTwbIdPPCWic',
+        cipher => 'Rijndael',
+    }
+);
+
 sub session {
     my $self = shift;
 
-    if (!exists $self->{session}) {
+    if ( !exists $self->{session} ) {
         $self->{session} = HTTP::Session2::ClientStore2->new(
-            env => $self->req->env,
+            env    => $self->req->env,
             secret => '68XMbdfdGZag883WbDTtik-y4zVCXFqb',
             cipher => $cipher,
         );
@@ -89,7 +94,7 @@ sub session {
 __PACKAGE__->add_trigger(
     AFTER_DISPATCH => sub {
         my ( $c, $res ) = @_;
-        if ($c->{session} && $res->can('cookies')) {
+        if ( $c->{session} && $res->can('cookies') ) {
             $c->{session}->finalize_plack_response($res);
         }
         return;
