@@ -28,7 +28,7 @@ use Markets::Web::View;
 }
 
 # load plugins
-__PACKAGE__->load_plugins( '+Markets::Model', 'Web::FillInFormLite', );
+__PACKAGE__->load_plugins( 'Web::FillInFormLite', );
 
 sub show_error {
     my ( $c, $msg, $code ) = @_;
