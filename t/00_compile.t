@@ -2,7 +2,6 @@ use strict;
 use warnings;
 use Test::More;
 
-
 use Markets;
 use Markets::Web;
 use Markets::Web::Dispatcher;
@@ -15,7 +14,6 @@ use Markets::Admin::Dispatcher;
 use Markets::Admin::C::Root;
 use Markets::Admin::ViewFunctions;
 use Markets::Admin::View;
-
 
 pass "All modules can load.";
 
