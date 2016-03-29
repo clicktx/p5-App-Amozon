@@ -9,6 +9,10 @@ sub index {
     my $model = $c->model('Data::Foo');
     my $logic = $c->model('Logic::Hoge');
 
+    # logging sample
+    $c->debug("debug log!");
+    warn 'warn';
+
     my $counter = $c->session->get('counter') || 0;
     $counter++;
     $c->session->set( 'counter' => $counter );
