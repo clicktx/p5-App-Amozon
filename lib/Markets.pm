@@ -13,7 +13,7 @@ use parent qw/Amon2/;
 __PACKAGE__->make_local_context();
 
 # load plugins
-__PACKAGE__->load_plugins( '+Markets::Model', );
+__PACKAGE__->load_plugins( '+Markets::Log', '+Markets::Model', );
 
 my $schema = Markets::DB::Schema->instance;
 
@@ -33,32 +33,6 @@ sub db {
         );
     }
     $c->{db};
-}
-
-use Log::Handler;
-
-sub log {
-    my $c = shift;
-    if ( !exists $c->{'log'} ) {
-        my $conf = $c->config->{logger};
-
-        if ( $ENV{PLACK_ENV} && $ENV{PLACK_ENV} eq 'production' ) {
-            delete $conf->{screen};
-            delete $conf->{file}->{'debug'};
-        }
-
-        my $log = Log::Handler->new();
-        $log->config( config => $conf ) or die $log->errstr;
-
-        $SIG{__WARN__} = sub { $log->log( warn => @_ ) };
-        $SIG{__DIE__} = sub { $log->trace( emergency => @_ ) };
-        $c->{'log'} = $log;
-    }
-    $c->{'log'};
-}
-
-sub debug {
-    shift->log->debug(shift);
 }
 
 1;

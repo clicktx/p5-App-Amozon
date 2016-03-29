@@ -6,7 +6,7 @@ my $log_dir = File::Spec->catdir( $basedir, 'var', 'log' );
 
 +{
     # logging setting
-    'logger' => {
+    'Log::Handler' => {
         screen => {
             log_to   => "STDOUT",
             maxlevel => "debug",
