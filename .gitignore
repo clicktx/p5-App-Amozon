@@ -18,5 +18,5 @@ MYMETA.yml
 /.carton/
 run_script/
 TODO
-/var/log/*
+/var/log/*.log
 !.gitkeep
