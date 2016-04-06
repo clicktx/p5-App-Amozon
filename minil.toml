@@ -1,3 +1,6 @@
 name="Markets"
+module_maker="ModuleBuildTiny"
 [build]
 build_class = "builder::MyBuilder"
+[release]
+do_not_upload_to_cpan=true
