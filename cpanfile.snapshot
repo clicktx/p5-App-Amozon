@@ -1887,6 +1887,13 @@ DISTRIBUTIONS
       Test::SharedFork 0.29
       Time::HiRes 0
       perl 5.008001
+  Text-SimpleTable-2.03
+    pathname: M/MR/MRAMBERG/Text-SimpleTable-2.03.tar.gz
+    provides:
+      Text::SimpleTable 2.03
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   Text-Xslate-3.3.9
     pathname: S/SY/SYOHEX/Text-Xslate-3.3.9.tar.gz
     provides:
