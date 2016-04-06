@@ -17,8 +17,6 @@ MYMETA.yml
 /.carton/
 run_script/
 TODO
-/var/log/*.log
-!.gitkeep
 /Markets-*
 /.build
 /_build_params
