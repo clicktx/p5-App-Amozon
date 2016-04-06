@@ -1,4 +1,6 @@
 package Markets::Model::Base;
+use strict;
+use warnings;
 
 sub new {
 
