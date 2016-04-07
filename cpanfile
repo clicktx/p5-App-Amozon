@@ -2,6 +2,7 @@ requires 'Amon2', '6.12';
 requires 'Amon2::Util';
 requires 'Amon2::Web';
 requires 'Amon2::Web::Dispatcher::RouterBoom';
+requires 'Amon2::Plugin::ShareDir';
 requires 'Crypt::CBC';
 requires 'Crypt::Rijndael';
 requires 'DBI';

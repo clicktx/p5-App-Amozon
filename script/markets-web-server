@@ -18,7 +18,7 @@ my $basedir = File::Spec->rel2abs(dirname(__FILE__));
 my $app = builder {
     enable 'Plack::Middleware::Static',
         path => qr{^(?:/robots\.txt|/favicon\.ico)$},
-        root => File::Spec->catdir(dirname(__FILE__), '..', 'static', 'web');
+        root => File::Spec->catdir(dirname(__FILE__), '..', 'share', 'static', 'web');
     enable 'Plack::Middleware::ReverseProxy';
     enable 'Plack::Middleware::Session',
         store => Plack::Session::Store::DBI->new(
@@ -29,7 +29,7 @@ my $app = builder {
             }
         );
 
-    mount '/static/' => Plack::App::File->new(root => File::Spec->catdir($basedir, '..', 'static', 'web'))->to_app();
+    mount '/static/' => Plack::App::File->new(root => File::Spec->catdir($basedir, '..', 'share', 'static', 'web'))->to_app();
     mount '/' => Markets::Web->to_app();
 };
 unless (caller) {

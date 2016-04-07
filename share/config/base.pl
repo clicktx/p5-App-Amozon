@@ -2,7 +2,7 @@ use strict;
 use File::Basename qw(dirname);
 my $basedir =
   File::Spec->rel2abs( File::Spec->catdir( dirname(__FILE__), '..' ) );
-my $log_dir = File::Spec->catdir( $basedir, 'var', 'log' );
+my $log_dir = File::Spec->catdir( $basedir, 'log' );
 
 +{
     # logging setting

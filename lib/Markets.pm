@@ -13,9 +13,26 @@ use parent qw/Amon2/;
 __PACKAGE__->make_local_context();
 
 # load plugins
-__PACKAGE__->load_plugins( '+Markets::Log', '+Markets::Model', );
+__PACKAGE__->load_plugins( 'ShareDir', '+Markets::Log', '+Markets::Model', );
 
 my $schema = Markets::DB::Schema->instance;
+
+sub load_config {
+    my ($c, $conf) = @_;
+    my $config = $conf || do {
+        my $env = $c->mode_name || 'development';
+        my $config_base = File::Spec->catdir($c->base_dir, 'config'); # backward compatible
+           $config_base = File::Spec->catdir($c->share_dir, 'config') unless -d $config_base;
+        my $fname = File::Spec->catfile($config_base, "${env}.pl");
+        my $config = do $fname;
+        Carp::croak("$fname: $@") if $@;
+        Carp::croak("$fname: $!") unless defined $config;
+        unless ( ref($config) eq 'HASH' ) {
+            Carp::croak("$fname does not return HashRef.");
+        }
+        $config;
+    };
+}
 
 sub db {
     my $c = shift;

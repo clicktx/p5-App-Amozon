@@ -72,6 +72,22 @@ DISTRIBUTIONS
       URI::QueryParam 0
       parent 0.223
       perl 5.008001
+  Amon2-Plugin-ShareDir-v0.0.7
+    pathname: T/TO/TOKUHIROM/Amon2-Plugin-ShareDir-v0.0.7.tar.gz
+    provides:
+      Amon2::Plugin::ShareDir v0.0.7
+    requirements:
+      Amon2 3.76
+      Amon2::Util 0
+      Amon2::Web 0
+      File::ShareDir 0
+      List::Util 0
+      MRO::Compat 0
+      Module::Build 0.38
+      if 0
+      parent 0
+      perl 5.008005
+      version 0
   Apache-LogFormat-Compiler-0.33
     pathname: K/KA/KAZEBURO/Apache-LogFormat-Compiler-0.33.tar.gz
     provides:
