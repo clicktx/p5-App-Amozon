@@ -45,6 +45,7 @@
       "runtime" : {
          "requires" : {
             "Amon2" : "6.12",
+            "Amon2::Plugin::ShareDir" : "0",
             "Amon2::Util" : "0",
             "Amon2::Web" : "0",
             "Amon2::Web::Dispatcher::RouterBoom" : "0",
