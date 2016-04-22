@@ -1,4 +1,4 @@
-name="Markets"
+name="Amozon"
 module_maker="ModuleBuildTiny"
 [build]
 build_class = "builder::MyBuilder"

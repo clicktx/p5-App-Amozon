@@ -1,7 +1,7 @@
 {
-   "abstract" : "Markets",
+   "abstract" : "Amozon",
    "author" : [
-      "Markets authors."
+      "Amozon authors."
    ],
    "dynamic_config" : 0,
    "generated_by" : "Minilla/v3.0.1, CPAN::Meta::Converter version 2.150005",
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "Markets",
+   "name" : "Amozon",
    "no_index" : {
       "directory" : [
          "t",
@@ -45,6 +45,7 @@
       "runtime" : {
          "requires" : {
             "Amon2" : "6.12",
+            "Amon2::Plugin::ShareDir" : "0",
             "Amon2::Util" : "0",
             "Amon2::Web" : "0",
             "Amon2::Web::Dispatcher::RouterBoom" : "0",

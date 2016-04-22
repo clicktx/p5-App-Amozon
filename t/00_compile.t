@@ -2,18 +2,18 @@ use strict;
 use warnings;
 use Test::More;
 
-use Markets;
-use Markets::Web;
-use Markets::Web::Dispatcher;
-use Markets::Web::C::Root;
-use Markets::Web::C::Account;
-use Markets::Web::ViewFunctions;
-use Markets::Web::View;
-use Markets::Admin;
-use Markets::Admin::Dispatcher;
-use Markets::Admin::C::Root;
-use Markets::Admin::ViewFunctions;
-use Markets::Admin::View;
+use Amozon;
+use Amozon::Web;
+use Amozon::Web::Dispatcher;
+use Amozon::Web::C::Root;
+use Amozon::Web::C::Account;
+use Amozon::Web::ViewFunctions;
+use Amozon::Web::View;
+use Amozon::Admin;
+use Amozon::Admin::Dispatcher;
+use Amozon::Admin::C::Root;
+use Amozon::Admin::ViewFunctions;
+use Amozon::Admin::View;
 
 pass "All modules can load.";
 

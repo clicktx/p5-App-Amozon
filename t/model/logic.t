@@ -4,7 +4,7 @@ use utf8;
 use t::Util;
 use Test::More;
 
-my $c = Markets->bootstrap();
+my $c = Amozon->bootstrap();
 
 subtest 'Logic hoge' => sub {
     my $res = $c->model('Logic::Hoge')->hoge;
