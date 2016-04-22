@@ -6,7 +6,7 @@ use Plack::Test;
 use Plack::Util;
 use Test::More;
 
-my $app = Plack::Util::load_psgi 'script/markets-web-server';
+my $app = Plack::Util::load_psgi 'script/amozon-web-server';
 test_psgi
     app => $app,
     client => sub {

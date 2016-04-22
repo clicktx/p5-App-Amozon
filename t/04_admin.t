@@ -6,7 +6,7 @@ use Plack::Test;
 use Plack::Util;
 use Test::More;
 
-my $admin = Plack::Util::load_psgi 'script/markets-admin-server';
+my $admin = Plack::Util::load_psgi 'script/amozon-admin-server';
 test_psgi
     app => $admin,
     client => sub {

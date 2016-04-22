@@ -42,10 +42,10 @@ sub slurp {
 }
 
 # initialize database
-use Markets;
+use Amozon;
 {
-    unlink 'db/test.db' if -f 'db/test.db';
-    system("sqlite3 db/test.db < sql/sqlite.sql");
+    unlink 'share/db/test.db' if -f 'share/db/test.db';
+    system("sqlite3 share/db/test.db < share/sql/sqlite.sql");
 }
 
 1;
